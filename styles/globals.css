@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%; /* Absolute Black */
+    --foreground: 210 40% 98%;
+
+    --card: 0 0% 4%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 0 0% 3%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 166 98% 51%; /* Neon Cyan #06fec8 */
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 0 0% 5%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+
+    --accent: 166 98% 51%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 10%;
+    --input: 0 0% 10%;
+    --ring: 166 98% 51%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-200;
+    background-color: #000000;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display), 'Clash Display', 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+/* Custom Scrollbar for Cyber Aesthetics */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #111111;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #06fec8;
+}
+
+/* Background vertical column lines */
+.vertical-columns {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 100px 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Cyber grid background layer */
+.cyber-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+}
+
+/* Glassmorphism elements */
+.glass-panel {
+  background: rgba(8, 8, 8, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.glass-panel-glow {
+  box-shadow: 0 0 25px -5px rgba(6, 254, 200, 0.08);
+}
+
+.crescent-globe {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 32%);
+  width: 170%;
+  height: 650px;
+  border-radius: 50% 50% 0 0;
+  background: radial-gradient(circle at 50% 0%, rgba(6, 254, 200, 0.18) 0%, rgba(4, 237, 22, 0.04) 30%, transparent 70%), #000000;
+  border-top: 1.5px solid rgba(6, 254, 200, 0.6);
+  box-shadow: 
+    0 -20px 50px -10px rgba(6, 254, 200, 0.4), 
+    0 -40px 120px -25px rgba(4, 237, 22, 0.2);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Gaussian blur of d3f920 (lime yellow-green) */
+.blur-lime-glow {
+  background: radial-gradient(circle, rgba(211, 249, 32, 0.12) 0%, transparent 65%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+/* Cyber Scanning Line Animation overlay */
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(6, 254, 200, 0.2), transparent);
+  pointer-events: none;
+}
+
+/* Custom glow text */
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(6, 254, 200, 0.4);
+}
+.text-glow-green {
+  text-shadow: 0 0 10px rgba(4, 237, 22, 0.4);
+}
+.text-glow-lime {
+  text-shadow: 0 0 10px rgba(211, 249, 32, 0.4);
+}
+.text-glow-red {
+  text-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+}

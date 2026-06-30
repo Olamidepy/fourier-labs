@@ -1,0 +1,195 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import { 
+  Calendar, 
+  Percent, 
+  Activity, 
+  Tag, 
+  AlertTriangle 
+} from "lucide-react";
+import { RiskResponse } from "@/types";
+import { StatusBadge } from "./StatusBadge";
+import { cn } from "@/utils/cn";
+
+interface ResultCardProps {
+  result: RiskResponse;
+}
+
+export const ResultCard: React.FC<ResultCardProps> = ({ result }) => {
+  const { address, status, reason, riskLevel, confidence, category, lastUpdated } = result;
+
+  // Theme styling based on reputation status
+  const cardThemes = {
+    safe: {
+      border: "border-[#04ed16]/20 shadow-[0_0_25px_rgba(4,237,22,0.06)]",
+      glowBg: "bg-[#04ed16]/5",
+      accentBar: "bg-[#04ed16]",
+      accentText: "text-[#04ed16] text-glow-green",
+      heading: "Reputation Cleared",
+      recommendation: "Fourier telemetry reports this contract as safe. It matches verified ecosystem deployments. Secure transaction signing recommended.",
+    },
+    unknown: {
+      border: "border-[#d3f920]/20 shadow-[0_0_25px_rgba(211,249,32,0.06)]",
+      glowBg: "bg-[#d3f920]/5",
+      accentBar: "bg-[#d3f920]",
+      accentText: "text-[#d3f920] text-glow-lime",
+      heading: "Ecosystem Telemetry Missing",
+      recommendation: "This address has no reputation history in Fourier databases. Check dynamic variables, code verification status, and inspect transaction parameters carefully before signing.",
+    },
+    scam: {
+      border: "border-red-500/25 shadow-[0_0_25px_rgba(239,68,68,0.06)]",
+      glowBg: "bg-red-950/5",
+      accentBar: "bg-red-500",
+      accentText: "text-red-400 text-glow-red",
+      heading: "Threat Detected",
+      recommendation: "HIGH DANGER. Fourier intelligence has flagged this smart contract address as malicious. Interacting with this contract will likely lead to loss of funds. DO NOT sign transactions.",
+    },
+  };
+
+  const theme = cardThemes[status];
+  
+  // Format dates
+  const formattedDate = new Date(lastUpdated).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZoneName: "short"
+  });
+
+  // Human readable category names
+  const categoryNames = {
+    none: "General/Other",
+    rug_pull: "Rug Pull",
+    fake_token: "Fake Token",
+    phishing: "Phishing Attack",
+    exploit: "Exploit/Vulnerability",
+    spam: "Spam/Airdrop Scam",
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -15 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className={cn(
+        "glass-panel w-full max-w-3xl mx-auto rounded-xl overflow-hidden border relative",
+        theme.border,
+        theme.glowBg
+      )}
+    >
+      {/* Visual Accent Top Bar */}
+      <div className={cn("h-1.5 w-full", theme.accentBar)} />
+
+      <div className="p-6 md:p-8 space-y-6">
+        {/* Header Section */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/5 pb-5">
+          <div className="space-y-1">
+            <span className="font-mono text-xs text-gray-500 uppercase tracking-widest">
+              Scan Result
+            </span>
+            <h3 className="text-xl font-bold tracking-tight text-white">
+              {theme.heading}
+            </h3>
+          </div>
+          <StatusBadge status={status} />
+        </div>
+
+        {/* Contract Metadata Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          
+          {/* Address Check */}
+          <div className="bg-white/[0.02] border border-white/5 rounded-lg p-4 space-y-1">
+            <span className="font-mono text-[10px] text-gray-500 tracking-wider uppercase block">
+              Contract Address
+            </span>
+            <span className="font-mono text-xs text-gray-300 break-all select-all font-semibold">
+              {address}
+            </span>
+          </div>
+
+          {/* Risk Level Badge */}
+          <div className="bg-white/[0.02] border border-white/5 rounded-lg p-4 space-y-1 flex flex-col justify-between">
+            <div>
+              <span className="font-mono text-[10px] text-gray-500 tracking-wider uppercase block">
+                Risk Rating
+              </span>
+              <span className={cn("font-mono text-sm font-bold uppercase tracking-wider", theme.accentText)}>
+                {riskLevel}
+              </span>
+            </div>
+            <div className="flex items-center gap-1.5 mt-2">
+              <Activity className="h-3.5 w-3.5 text-gray-500" />
+              <span className="text-[10px] text-gray-500 font-mono">Severity Scale</span>
+            </div>
+          </div>
+
+          {/* Confidence Meter */}
+          <div className="bg-white/[0.02] border border-white/5 rounded-lg p-4 space-y-1 flex flex-col justify-between">
+            <div>
+              <span className="font-mono text-[10px] text-gray-500 tracking-wider uppercase block">
+                Analysis Confidence
+              </span>
+              <span className="font-mono text-base font-bold text-white flex items-center gap-0.5">
+                {confidence}
+                <Percent className="h-3.5 w-3.5 text-gray-400" />
+              </span>
+            </div>
+            {/* Simple Progress Bar */}
+            <div className="w-full bg-white/5 rounded-full h-1.5 mt-2">
+              <div 
+                className={cn("h-1.5 rounded-full", theme.accentBar)} 
+                style={{ width: `${confidence}%` }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Detailed Reason Field */}
+        <div className="space-y-2">
+          <h4 className="font-mono text-xs font-semibold tracking-wider text-gray-400 uppercase flex items-center gap-1.5">
+            <AlertTriangle className="h-3.5 w-3.5 text-cyan-400" />
+            Telemetry Details
+          </h4>
+          <p className="font-mono text-xs text-gray-300 bg-black/40 border border-white/5 p-4 rounded-lg leading-relaxed whitespace-pre-line">
+            {reason}
+          </p>
+        </div>
+
+        {/* Category Tag & Timestamp Footer */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 border-t border-white/5 text-xs font-mono text-gray-500">
+          
+          <div className="flex items-center gap-1.5">
+            <Tag className="h-4 w-4 text-cyan-400/60" />
+            <span>Category:</span>
+            <span className="font-bold text-gray-300 uppercase bg-white/5 border border-white/5 px-2 py-0.5 rounded">
+              {categoryNames[category]}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-1.5">
+            <Calendar className="h-4 w-4 text-gray-500" />
+            <span>Last Updated: {formattedDate}</span>
+          </div>
+        </div>
+
+        {/* Recommendation Panel */}
+        <div className={cn(
+          "rounded-lg border p-4 text-xs font-mono leading-relaxed",
+          status === "safe" && "bg-[#04ed16]/5 border-[#04ed16]/20 text-[#04ed16]",
+          status === "unknown" && "bg-[#d3f920]/5 border-[#d3f920]/20 text-[#d3f920]",
+          status === "scam" && "bg-red-950/10 border-red-500/20 text-red-300"
+        )}>
+          <span className="font-bold block mb-1">RECOMMENDATION:</span>
+          {theme.recommendation}
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+export default ResultCard;

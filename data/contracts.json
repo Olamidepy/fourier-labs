@@ -1,0 +1,62 @@
+[
+  {
+    "address": "CA3D5RW6ARYNMSND57NVHSTRW4CD6B4UQQE246TRPFR6CP6NJ2C7HWSU",
+    "name": "Soroban Swap Pool v1",
+    "status": "safe",
+    "reason": "Audited liquidity pool deployment. Verified source code matches standard repository. Zero reports from community over 12 months.",
+    "riskLevel": "none",
+    "confidence": 98,
+    "category": "none",
+    "lastUpdated": "2026-06-30T10:00:00Z"
+  },
+  {
+    "address": "CC5K6R6WRWNW53PZQRV6463P6F4N6M4UQQE246TRPFR6CP6NJ2C7HIGH",
+    "name": "Stellar Yield Yield-Aggregator",
+    "status": "scam",
+    "reason": "Developer keys retain full administrative backdoor access. Code contains dynamic fee functions configured to rug pull assets (mint-and-drain mechanism).",
+    "riskLevel": "critical",
+    "confidence": 95,
+    "category": "rug_pull",
+    "lastUpdated": "2026-06-29T14:32:00Z"
+  },
+  {
+    "address": "CD3D5RW6ARYNMSND57NVHSTRW4CD6B4UQQE246TRPFR6CP6NJ2C7SCAM",
+    "name": "USD Coin Impersonator",
+    "status": "scam",
+    "reason": "Contract mimics the official Stellar USDC token name and logo but redirect calls to a non-standard transfer function that compromises signers.",
+    "riskLevel": "high",
+    "confidence": 90,
+    "category": "fake_token",
+    "lastUpdated": "2026-06-28T09:15:00Z"
+  },
+  {
+    "address": "CB3D5RW6ARYNMSND57NVHSTRW4CD6B4UQQE246TRPFR6CP6NJ2C7HACK",
+    "name": "Flash-Loan Protocol Helper",
+    "status": "scam",
+    "reason": "Vulnerable contract containing an unchecked reentrancy vulnerability. Active exploit payload detected in live transaction history draining user collateral.",
+    "riskLevel": "critical",
+    "confidence": 99,
+    "category": "exploit",
+    "lastUpdated": "2026-06-30T16:45:00Z"
+  },
+  {
+    "address": "CE3D5RW6ARYNMSND57NVHSTRW4CD6B4UQQE246TRPFR6CP6NJ2C7SPAM",
+    "name": "StellarAirdrop Claim Portal",
+    "status": "scam",
+    "reason": "Distributes worthless claim vouchers that request extreme wallet permissions. Users are forced to execute high-gas transactions that route to private pools.",
+    "riskLevel": "medium",
+    "confidence": 85,
+    "category": "spam",
+    "lastUpdated": "2026-06-25T11:20:00Z"
+  },
+  {
+    "address": "CF3D5RW6ARYNMSND57NVHSTRW4CD6B4UQQE246TRPFR6CP6NJ2C7FISH",
+    "name": "Decentralized Stellar Swap Phishing Portal",
+    "status": "scam",
+    "reason": "Mimics the layout of popular wallets. Requests users sign arbitrary operations that transfer key-pair controls to attackers.",
+    "riskLevel": "critical",
+    "confidence": 97,
+    "category": "phishing",
+    "lastUpdated": "2026-06-30T08:12:00Z"
+  }
+]
