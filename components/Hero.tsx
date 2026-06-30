@@ -43,7 +43,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-            className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1] font-display"
+            className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.1] font-display"
           >
             Smart contract <span className="text-white">reputation</span>
             <div className="mt-2 text-transparent bg-clip-text bg-gradient-to-r from-[#06fec8] via-[#04ed16] to-[#d3f920] text-glow-cyan">
