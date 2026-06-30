@@ -10,11 +10,11 @@ Instead of blind-signing transaction targets, Fourier enables instant telemetry 
 
 ## Key Features
 
-- 🔍 **Contract Address Scanning:** Input any 56-character Soroban contract address (`C...`) to run instantaneous threat checks.
-- 🚨 **Visual Reputation Verdicts:** Instantly returns a verdict of **Safe** (verified/audited), **Unknown** (no telemetry logs), or **Scam Alert** (flagged malicious) with risk severity scores.
-- 📊 **Contextual Telemetry Details:** Displays clear reasons, category markers, and confidence percentages for each reputation determination.
-- ⚡ **Developer First API:** Perform contract safety lookups programmatically in scripts, wallets, or CI/CD pipelines via lightweight `/api/check/[address]` endpoints.
-- 🌐 **Scalable Architecture:** Pre-architected to seamlessly transition from flat JSON local file storage to PostgreSQL/Supabase database tables in Phase 3.
+-  **Contract Address Scanning:** Input any 56-character Soroban contract address (`C...`) to run instantaneous threat checks.
+-  **Visual Reputation Verdicts:** Instantly returns a verdict of **Safe** (verified/audited), **Unknown** (no telemetry logs), or **Scam Alert** (flagged malicious) with risk severity scores.
+-  **Contextual Telemetry Details:** Displays clear reasons, category markers, and confidence percentages for each reputation determination.
+-  **Developer First API:** Perform contract safety lookups programmatically in scripts, wallets, or CI/CD pipelines via lightweight `/api/check/[address]` endpoints.
+-  **Scalable Architecture:** Pre-architected to seamlessly transition from flat JSON local file storage to PostgreSQL/Supabase database tables in Phase 3.
 
 ---
 
