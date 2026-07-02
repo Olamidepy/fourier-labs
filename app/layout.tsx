@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Syne, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,10 +9,10 @@ const sansFont = Inter({
   variable: "--font-sans",
 });
 
-const displayFont = Syne({
+const displayFont = Inter({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["700", "800"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 const monoFont = JetBrains_Mono({

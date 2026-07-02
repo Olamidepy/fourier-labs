@@ -57,7 +57,7 @@ export const Features: React.FC = () => {
           <span className="font-mono text-xs text-[#06fec8] font-bold uppercase tracking-widest text-glow-cyan">
             Security Features
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white font-display">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white font-display">
             Comprehensive Smart Contract Shield
           </h2>
           <p className="text-xs font-mono text-gray-500 leading-relaxed">
