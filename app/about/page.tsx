@@ -21,7 +21,7 @@ export default function AboutPage() {
           <span className="font-mono text-xs text-[#06fec8] text-glow-cyan font-bold uppercase tracking-widest block">
             Our Mission
           </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight font-display">
+          <h1 className="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight font-display">
             Securing the Trust Layer of Stellar Soroban
           </h1>
           <p className="text-sm sm:text-base font-mono text-gray-400 leading-relaxed max-w-2xl">
@@ -59,7 +59,7 @@ export default function AboutPage() {
         {/* Core Principles */}
         <div className="space-y-8 pt-8 border-t border-white/5">
           <div className="space-y-2">
-            <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-white font-display">
+            <h2 className="text-lg sm:text-xl font-bold tracking-tight text-white font-display">
               Our Core Design Principles
             </h2>
             <p className="text-xs font-mono text-gray-500">

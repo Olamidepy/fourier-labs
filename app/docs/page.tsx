@@ -37,7 +37,7 @@ export default function DocsPage() {
           <section id="overview" className="space-y-4">
             <div className="flex items-center gap-2">
               <BookOpen className="h-5 w-5 text-[#06fec8]" />
-              <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white font-display">
+              <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white font-display">
                 Project Overview
               </h1>
             </div>
@@ -56,7 +56,7 @@ export default function DocsPage() {
           <section id="architecture" className="space-y-4 border-t border-white/5 pt-10">
             <div className="flex items-center gap-2">
               <Cpu className="h-5 w-5 text-[#06fec8]" />
-              <h2 className="text-xl sm:text-2xl font-extrabold text-white font-display">
+              <h2 className="text-lg sm:text-xl font-bold text-white font-display">
                 Architecture & Data Flow
               </h2>
             </div>
@@ -84,7 +84,7 @@ export default function DocsPage() {
           <section id="classifications" className="space-y-4 border-t border-white/5 pt-10">
             <div className="flex items-center gap-2">
               <Eye className="h-5 w-5 text-[#06fec8]" />
-              <h2 className="text-xl sm:text-2xl font-extrabold text-white font-display">
+              <h2 className="text-lg sm:text-xl font-bold text-white font-display">
                 Threat Matrix Classifications
               </h2>
             </div>
@@ -112,7 +112,7 @@ export default function DocsPage() {
           <section id="api" className="space-y-6 border-t border-white/5 pt-10">
             <div className="flex items-center gap-2">
               <Terminal className="h-5 w-5 text-[#06fec8]" />
-              <h2 className="text-xl sm:text-2xl font-extrabold text-white font-display">
+              <h2 className="text-lg sm:text-xl font-bold text-white font-display">
                 REST API Reference
               </h2>
             </div>
@@ -177,7 +177,7 @@ export default function DocsPage() {
           <section id="contributing" className="space-y-4 border-t border-white/5 pt-10 pb-12">
             <div className="flex items-center gap-2">
               <Code className="h-5 w-5 text-[#06fec8]" />
-              <h2 className="text-xl sm:text-2xl font-extrabold text-white font-display">
+              <h2 className="text-lg sm:text-xl font-bold text-white font-display">
                 Contributing Framework
               </h2>
             </div>

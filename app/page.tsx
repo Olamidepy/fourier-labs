@@ -71,7 +71,7 @@ export default function Home() {
             <span className="font-mono text-xs text-[#06fec8] text-glow-cyan font-bold uppercase tracking-widest">
               Reputation Scanner
             </span>
-            <h2 className="text-3xl font-extrabold text-white tracking-tight font-display">
+            <h2 className="text-2xl font-bold text-white tracking-tight font-display">
               Analyze Soroban Contract
             </h2>
             <p className="text-xs font-mono text-gray-500">
@@ -118,7 +118,7 @@ export default function Home() {
             <span className="font-mono text-xs text-[#06fec8] text-glow-cyan font-bold uppercase tracking-widest">
               Workflow Guide
             </span>
-            <h2 className="text-3xl font-extrabold text-white tracking-tight font-display">
+            <h2 className="text-2xl font-bold text-white tracking-tight font-display">
               How Fourier Secures Transactions
             </h2>
             <p className="text-xs font-mono text-gray-500">
@@ -182,7 +182,7 @@ export default function Home() {
                 <GitBranch className="h-4 w-4" />
                 Collaborative Defense
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">
+              <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight font-display">
                 Designed for Open Source Contributions
               </h2>
               <p className="text-xs font-mono text-gray-400 leading-relaxed">

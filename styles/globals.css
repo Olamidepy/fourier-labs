@@ -47,7 +47,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display), 'Clash Display', 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-display), 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 }
 
